@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+<html>
+	<style>
+		 
+			@media only screen and (orientation:portrait){
+			#warning-message { display:block; }
+			#convideo1 { display:none; }
+			
+			}
+			@media only screen and (orientation:landscape){
+			#warning-message { display:none; }
+			#convideo1 { display:display; }
+			
+			}
+
+	</style>
+	
+	<meta charset="utf-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="msapplication-tap-highlight" content="no" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+	
+	<head>
+<script type="text/javascript">
+// set minutes
+ //var mins = Math.floor(5/60);
+var mins = 1;
+ //alert(mins);
+// calculate the seconds (don't change this! unless time progresses at a different speed for you...)
+var secs = mins * 60;
+function countdown() {
+	setTimeout('Decrement()',1000);
+}
+function Decrement() {
+	if (document.getElementById) {
+		minutes = document.getElementById("minutes");
+		seconds = document.getElementById("seconds");
+		//alert(secs);
+		//alert(mins);
+		
+		// if less than a minute remaining
+		if (seconds < 59) {
+			seconds.value = secs;
+			
+		} 
+		
+		else {
+		
+			minutes.value = getminutes();
+			seconds.value = getseconds();
+			
+		}
+		secs--;
+		setTimeout('Decrement()',1000);
+		if(secs==0 && mins==0)
+		{
+		alert("j");
+		}
+		
+	}
+	
+}
+function getminutes() {
+	// minutes is seconds divided by 60, rounded down
+	mins = Math.floor(secs / 60);
+	return mins;
+	
+}
+function getseconds() {
+	// take mins remaining (as seconds) away from total seconds remaining
+	return secs-Math.round(mins *60);
+}
+
+
+</script>
+		<!-- correct one
+			<script>
+			function preventBack(){window.history.forward();}
+			setTimeout("preventBack()", 0);
+			window.onunload=function(){null};
+		</script>-->
+		
+		<!--<script>
+			var start = function() {
+			screen.orientation.lock('landscape-primary').then(
+			
+			function() {
+			alert('To start, rotate your screen to landscape.');
+			
+			var orientationChangeHandler = function() {
+			if (!screen.orientation.type.startsWith('landscape')) {
+            return;
+			}
+			screen.orientation.removeEventListener('change', orientationChangeHandler);
+			startInternal();
+			}
+			
+			screen.orientation.addEventListener('change', orientationChangeHandler);
+			});
+			}
+			window.onload = start;
+		</script> -->
+		
+		
+		
+		<link rel="stylesheet" href="assets/css/angular-material.min.css">
+		<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+		
+		<link rel="stylesheet" href="assets/css/jquery-ui.css" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<script src="assets/js/angular.min.js"></script>
+		<script src="assets/js/angular-animate.min.js"></script>
+		<script src="assets/js/angular-aria.min.js"></script>
+		<script src="assets/js/angular-messages.min.js"></script>
+		<script src="assets/js/angular-material.min.js"></script>
+		<script src="assets/js/ngStorage.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+		<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+		
+		<title>ngVideo</title>
+		
+		
+		<script src="js/material/angular-material.js"></script>
+		<script src="js/material/angular-route.min.js"></script>
+		<script src="assets/js/jquery-1.11.1.min.js"></script>		
+		<script src="assets/js/jquery-ui.min.js"></script>
+		
+		
+		
+		<!--	<link rel="stylesheet"
+			href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+			<link rel="stylesheet"
+			href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+			<script src="http://code.jquery.com/jquery.min.js"></script>
+		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>-->
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<!-- Styles! -->
+		<link rel="stylesheet" type="text/css" href="assets/css/default.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/clock.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/circular.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/circularprogress.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
+		
+		<!-- Dependencies! -->
+		
+		<script type="text/javascript" src="js/vendor/jquery.min.js"></script>
+		
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		
+		<!-- ngVideo! -->
+		<script type="text/javascript" src="js/ng-video.js"></script>
+		<!-- Angular app! -->
+		<script type="text/javascript" src="js/Default.js"></script>
+		<script type="text/javascript" src="js/Seekable.js"></script>
+		
+		
+		<script type="text/javascript" src="js/controllers/VideoController.js"></script>
+		<script src="js/controllers/app.js"></script>
+	    <script src="js/controllers/MyApp.js"></script> 
+		<script type="text/javascript" src="js/controllers/Videoreport.js"></script>
+		<link rel="stylesheet" type="text/css" href="assets/css/index.css" />		
+		<div id='test'></div>
+		
+		<style>
+			#go{
+			color: white;
+			font-size: 12px;
+			position: fixed;
+			top:20px;
+			left:10px;				
+			padding: 18px 10 0 45px;
+			}
+			table {
+			width: 100%;
+			border-collapse:collapse;    
+			}
+			th, td {
+			text-align: center;
+			padding: 5px;
+			}
+			
+			td{
+			color: blue;
+			}
+			.modal-body{
+			position:fixed;
+			}
+			.modal1 {
+			
+			width: 100%;
+			height: 10%;
+			display: inline-block;
+			}
+			label{
+			font-size: 12px;
+			font-family:"Comic Sans MS", cursive, sans-serif;/*"Lucida Sans Unicode", "Lucida Grande", sans-serif*/
+			margin-bottom:10px;
+			margin-left:10px;
+			margin-right:20px;
+			margin-top:10px;
+			
+			
+			}
+			
+			label:hover{
+			color:blue;
+			}
+			
+			
+			.modal:target {
+			opacity:1;
+			pointer-events: auto;
+			}
+			.modal > div {
+			width: 300px;
+			position: relative;
+			margin: 10% auto;
+			padding: 5px 20px 13px 20px;
+			border-radius: 30px;
+			
+			background: #fff;
+			background: -moz-linear-gradient(#fff,#E6D9E5);
+			background: -webkit-linear-gradient(#fff, #999);
+			background: -o-linear-gradient(#fff, #999);
+			box-shadow: 5px 5px 5px #080000;
+			}
+			
+			textarea{
+			margin:5px;
+			}
+			
+			input[type="checkbox"], input[type="radio"] {
+			margin:8px 20 0;
+			margin-right: 5px;
+			}
+			
+			.progress{
+			top: 0px;
+			left: 0px;
+			position: fixed;
+			display: block;
+			height:8px;
+			
+			}
+			
+      #warning-message{
+	text-align: center;
+    position: fixed;
+    top: 45%;
+	
+	font-weight:bold;
+	font-size:14px;
+ 
+	  }
+			
+		</style>
+		
+	</head>
+	
+	<body ng-app="videoApp" ng-controller="VideoController">
+		<div id="warning-message">Please use Landscape Mode for better Result!!</div>
+		<section id="convideo1" class="ng-video-container">
+			
+			<div  class="video">
+				<div id="container">
+					<div class="rev_slider">
+						<!-- <div id="overlay" class="overlay"> -->
+						<!-- Base Directive -->
+						
+						<div class="wrap"> 
+							<section class="video" ng-video>
+								
+								<!-- Screen Directive -->
+								<video  id="video1" vi-screen >
+									<!--<track kind="subtitles" srclang="en" label= "English" src="video.vtt" default/>-->
+									
+									
+								</video>
+								
+								<!--<div class="clock" id="timer1">
+									<div id="second" class="hand"></div>
+									<!-- <div class="hand minutes"></div>
+									<div class="hand hours"></div>-->
+								<!--</div>-->
+								
+								
+								<section class="btns2"><div id="timer"></div></section> 
+								<!--<div id="p" ng-show='progress' class="progress progress-striped active" style="width:100%;">
+									<div id="progress-bar1" role="progressbar" class="progress-bar"></div>
+								</div>-->
+								
+								<div id="progressbar2" ng-show='progress' class="progress" style="width:100%;height:8px">
+									
+								</div>
+								
+								<!--<div id="p" ng-show='progress' class="progress progress-striped active" style="width:100%;">
+									<div id="progress-bar" class="progress-bar"></div>
+								</div>-->
+								
+								<!--<div class="ques" id="ques">Question:</div>
+									<section class="currplay" div id="currplay">
+									</section>
+									<section class="currplay1" div id="currplay1">
+								</section>-->
+								
+								
+								<!-- Trigger the modal with a button  myModal-->
+								<!--<button type="button" class="btn btn-info" ng-show='question' data-toggle="modal" data-target="#myModal">Question</button>
+								<button type="button" class="btn btn-info" ng-show='report' data-toggle="modal" data-target="#myReport">Report</button>-->
+								
+								
+								<!-- Modal -->
+								<div id="myModal" class="modal" role="dialog" style="top:10px;">
+									<div class="modal-dialog">
+										
+										
+										
+										
+										
+										<div ng-show='qtitle' for id="question_title"></div>
+										
+										
+										
+										<div ng-show='chkbx' name="checkboxes" id="checkboxes" type="checkbox" class="chkbox" ng-model="checkboxes">
+										</div>
+										
+										<div ng-show='radiobtn' name="radiobtn" id="radiobtn" type="radio" class= "btnss" ng-model="radiobtn">
+										</div>
+										
+										<div  ng-show='dropdwn' class= "btns" ng-model="dropdwn" required > 
+										</div>
+										
+										
+										<center><md-button class='btn btn-info' ng-show='submitbtn' id= "gosubmit" ng-click="submit1()" data-dismiss="modal" >Submit</md-button></center>
+										
+										<center><md-button class='btn btn-info' ng-show='endbtn'  id= "endbtn" ng-click="end()" data-dismiss="modal" >End Test</md-button></center>
+										
+										
+										
+										
+									</div>
+								</div>
+								
+								<center><button class='btn btn-info' ng-show='startvideo' id= "go" ng-click="playvideo()">Start Test</button></center>
+								
+								
+								<!-- Feedback Directive -->
+								<section vi-feedback class="feedback">
+									
+									<span class="buffering" ng-show="buffering"><!--Buffering...--></span>
+									
+									<section class="loading" ng-show="loading">
+										Loading...
+									</section>
+									
+									<!-- Duration Directive -->
+									<section class="duration">
+										{{currentTime | number: 2}}s of {{duration | number: 2}}s
+										[{{percentagePlayed | number: 0}}%]
+									</section> 
+									
+									<section class="title">Avalia</section> 
+									
+								</section>						
+							</section>	
+							
+							<!-- <md-button class="md-primary" id="dialogbox"   flex="100"  flex-gt-md="auto" style="color:blue">
+								Confirm
+							</md-button>-->
+							
+							
+							
+							
+							<!--<div  ng-show='progress' class="progress progress-striped active" style="width:100%;">
+								<div id="progress-bar1" class="progress-bar"></div>
+								</div>
+								var $progressbar1 = $("#progress-bar1");							
+								$progressbar1.css("width", Math.round(100 * 5/ no_of_questions) + "%");
+							document.getElementById('progress-bar1').style.backgroundColor = 'red';-->	
+							
+							
+							
+						</div>	
+					</div>
+				</div>
+			</div>
+			
+			
+			
+			
+
+			
+			
+			
+	<!--<div class="progress-container" onclick="css3RadialProgressBar()">
+    <div id="progress-circle" class="progress-circle" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+      <span class="p-h"></span><span class="p-f"></span>
+      <span id="progress">0%</span> <span class="sr-only">Complete</span>
+    </div>
+</div>
+<style type="text/css" href="assets/css/circular.css" id="progress-style">
+	</style>-->
+			
+			
+	
+	<div id="cirtimer" data-progress="0">
+  <span class="quad1"></span>
+  <span class="quad2"></span>
+  <span class="quad3"></span>
+  <span class="quad4"></span>
+  <div class='counter'></div>
+	</div>
+	
+	
+	
+	
+<!--<div id="timer2">
+	 <input id="minutes" type="text" style="width: 14px; border: none; background-color:none; font-size: 16px; font-weight: bold;"> <input id="seconds" type="text" style="width: 26px; border: none; background-color:none; font-size: 16px; font-weight: bold;"> 
+</div>-->
+
+
+			
+		</section>
+		
+	</body>
+	<script>
+
+</script>
+</html>	

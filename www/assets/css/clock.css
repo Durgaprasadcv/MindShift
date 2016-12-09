@@ -1,0 +1,93 @@
+/*@import "compass/css3";
+
+
+* { box-sizing:border-box; }
+
+body {
+ 	background:#EDEDED; 
+} */
+
+.clock {
+ 	width:50px;
+	height:50px;
+	border-radius:50%;
+	background:radial-gradient(15% 25%, #fff, #DDD 60%);
+	border:3px solid #5694B3;
+	margin:30px auto;
+	position:relative;
+	box-shadow: 
+    0 5px 3px rgba(0,0,0,0.3),
+    inset 0 5px 3px rgba(0,0,0,0.3);
+}
+
+.clock:after {
+ 	position:absolute;
+	width:10px;
+	height:10px;
+	background:#333;
+	border-radius:50%;
+	left:50%;
+	top:50%;
+	margin-left:-5px;
+	margin-top:-5px;
+	content:"";
+	border:1px solid rgba(0,0,0,0.1);
+	box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.4),
+    0 2px 1px rgba(0,0,0,0.5);
+}
+
+.hand {
+ 	position:absolute;
+	left:50%;
+	transform-origin:10% 100%;
+	box-shadow:0 0 5px rgba(0,0,0,0.2);
+	border-radius:30px;
+}
+
+/*.seconds {
+	width:2px;
+	height:24px;
+	background:#6b1faa;
+	top:0px;
+	animation: rota 60s steps(120, end) infinite;
+	
+}*/
+
+
+
+#second {
+	width:2px;
+	height:24px;
+	background:#6b1faa;
+	top:0px;	
+  	animation: rota 4s steps(120, end) infinite;
+	
+}
+
+.minutes {
+ 	width:2px;
+	height:70px;
+	background:#08C;
+	top:30px;
+	animation: rota 3600s linear infinite;
+	transform-origin: 50% 100%;
+}
+
+.hours {
+ 	width:3px;
+	height:40px;
+	background:#222;
+	top:60px;
+	animation:rota 86400s linear infinite;
+}
+
+@-webkit-keyframes rota {
+ 	from { transform:rotate(0deg); }
+	to { transform:rotate(360deg); }
+}
+
+@-moz-keyframes rota {
+ 	from { transform:rotate(0deg); }
+	to { transform:rotate(360deg); }
+}

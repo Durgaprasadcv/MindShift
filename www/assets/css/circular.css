@@ -1,0 +1,228 @@
+
+.wrapper {
+  width: 100px; /* Set the size of the progress bar */
+  height: 100px;
+  position: absolute; /* Enable clipping */
+  clip: rect(0px, 100px, 100px, 50px); /* Hide half of the progress bar */
+}
+/* Set the sizes of the elements that make up the progress bar */
+.circle {
+  width: 100px;
+  height: 100px;
+  border: 5px solid green;
+  border-radius: 50px;
+  position: absolute;
+  clip: rect(0px, 50px, 100px, 0px);
+}
+/* Using the data attributes for the animation selectors. */
+/* Base settings for all animated elements */
+div[data-anim~=base] {
+  -webkit-animation-iteration-count: 1;  /* Only run once */
+  -webkit-animation-fill-mode: forwards; /* Hold the last keyframe */
+  -webkit-animation-timing-function:linear; /* Linear animation */
+}
+
+.wrapper[data-anim~=wrapper] {
+  -webkit-animation-duration: 0.01s; /* Complete keyframes asap */
+  -webkit-animation-delay: 3s; /* Wait half of the animation */
+  -webkit-animation-name: close-wrapper; /* Keyframes name */
+}
+
+.circle[data-anim~=left] {
+  -webkit-animation-duration: 6s; /* Full animation time */
+  -webkit-animation-name: left-spin;
+}
+
+.circle[data-anim~=right] {
+  -webkit-animation-duration: 3s; /* Half animation time */
+  -webkit-animation-name: right-spin;
+}
+/* Rotate the right side of the progress bar from 0 to 180 degrees */
+@-webkit-keyframes right-spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(180deg);
+  }
+}
+/* Rotate the left side of the progress bar from 0 to 360 degrees */
+@-webkit-keyframes left-spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+/* Set the wrapper clip to auto, effectively removing the clip */
+@-webkit-keyframes close-wrapper {
+  to {
+    clip: rect(auto, auto, auto, auto);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+CSS3 Radial Progress Bar
+Barra de Progresso Radial CSS3
+===============================
+
+Style based on the model used in http://wetransfer.com
+Estilo baseado no modelo utilizado em http://wetransfer.com
+
+Author / Autor:
+Thiago Bonifácio (http://www.thiagobonifacio.com.br)
+*/
+/*
+@import url(http://fonts.googleapis.com/css?family=Montserrat:700);
+
+@import url(http://fonts.googleapis.com/css?family=Merienda+One);
+
+
+.progress-container {
+  -webkit-box-shadow:inset 0 0 0 1px #D1D2D3, inset 0 -1px 25px 0 #CFCFCF;
+  box-shadow:inset 0 0 0 1px #D1D2D3, inset 0 -1px 25px 0 #CFCFCF;
+  margin: -125px 0 0 -125px;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  position: absolute;
+  background: #fff;
+  height: 250px;
+  width: 250px;
+  left: 50%;
+  top: 50%;
+}
+
+.progress-circle {
+  -webkit-mask-image: -webkit-radial-gradient(circle, white, black);
+  -webkit-box-shadow: 0 -1px 0 0 #D6D7D8;
+  box-shadow: 0 -1px 0 0 #D6D7D8;
+  margin: -82px 0 0 -82px;
+  background: #F3F3F3;
+  border-radius: 100%;
+  position: absolute;
+  overflow: hidden;
+  height: 164px;
+  width: 164px;
+  left: 50%;
+  top: 50%;
+}
+
+.p-f,
+.p-h {
+  clip: rect(0, 164px, 164px, 82px);  
+  position: absolute;
+  overflow: hidden;
+  height: 164px;
+  width: 100%;
+  left: 0%;
+}
+
+.p-f{
+  -moz-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  left: 0;
+}
+
+.p-f:before,
+.p-h:before{
+  content: '';
+  background: #828282;
+  position: absolute;
+  height: 164px;
+  width: 50%;
+  left: 0%;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  -moz-transform-origin: 100% 50%;
+  -webkit-transform-origin: 100% 50%;
+  -o-transform-origin: 100% 50%;
+  -ms-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+}
+
+.progress-circle #progress {
+  -webkit-box-shadow: 0 1px 0 0.5px  #D6D7D8;
+  box-shadow: 0 1px 0 0.5px #D6D7D8;
+  font-family: 'Montserrat', sans-serif;
+  margin: -70px 0 0 -70px;
+  border-radius: 100%;
+  position: absolute;
+  text-align: center;
+  line-height: 140px;
+  background: #fff;
+  font-size: 34px;
+  color: #46494D;
+  height: 140px;
+  width: 140px;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+}
+
+/* Screen Readers only (from Bootstrap) */
+/*
+
+.sr-only {
+  clip: rect(0,0,0,0);
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  height: 1px;
+  width: 1px;  
+  padding: 0;
+  border: 0;
+}
+
+/* Click / Touch Here */
+/*
+.progress-container:before {
+  content: 'CSS3 Radial Progress Bar';
+  text-transform: uppercase;
+  position: absolute;
+  color: #828282;
+  font-size: 10px;
+  bottom: 15px;
+  left: 20px;
+}
+
+.progress-container:after {
+  background: url(data:image/png;base64,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) 0 0 no-repeat;
+  background-size: 59px 60px;
+  content: 'Click / Touch Here \a Clique / Toque Aqui';
+  font: 1.2em 'Merienda One', cursive;
+  position: absolute;
+  padding-top: 70px;
+  white-space: pre;
+  color: #fafafa;
+  right: -110%;
+  bottom: 10px;
+  width: 100%;
+}
+
+
+
+
+
+

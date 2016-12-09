@@ -1,0 +1,82 @@
+
+
+<style>
+	.palette-Indigo-50.bg {
+    background-color: #f3f3f3;
+	}
+	
+	.palette-Indigo-100.bg {
+    background-color: rgb(103, 115, 179);
+	}
+	
+	#colr{
+	background-color: lightblue;
+	}
+	
+	
+	.fabSpeedDial .text-capitalize {
+         text-transform: capitalize; 
+      }
+      .fabSpeedDial .md-fab:hover, .fabSpeedDialdemoBasicUsage .md-fab.md-focused {
+         background-color: #000 !important; 
+      }
+      .fabSpeedDial p.note {
+         font-size: 1.2rem; 
+      }
+      .fabSpeedDial .lock-size {
+         min-width: 300px;
+         min-height: 300px;
+         width: 300px;
+         height: 300px;
+         margin-left: auto;
+         margin-right: auto; 
+      }	 
+</style>
+
+<!--<div class="card dark palette-Indigo-50 bg"  ng-repeat="t in testm">
+	<div class="card-header">
+	<img ng-src={{t.test_image}} class="md-card-image" height="102px" width="100%" alt="Learn HTML5"></img>
+	</div>	
+	<div class="card-body">
+	<span id="test1" class="a"><b><center>Test:{{t.test_id}}</center></b></span>
+	<span id="test1" class="a"><b><center>Name:{{t.test_name}}</center></b></span>
+	<span id="test1" class="a"><b><center>Description:{{t.test_description}}</center></b></span>  <br>     
+	<center>
+	
+	<button class="btn dark palette-Indigo-100 bg" ng-click="starttest(t.test_id)">Begin Training</button>
+	</center>	<br>
+	</div>
+</div>-->
+
+
+<section id="main">
+	
+	<section id="content">
+		<div class="container">
+			<div class="c-header">
+				<h2></h2>
+			</div>			
+			<div class="card">
+					<div class="list-group-item media"  ng-style="mycolor"  id="colr1"  ng-repeat="t in testm">
+						<br>						
+						<div class="pull-left">
+							<img class="avatar-img" src={{t.test_image}} alt="">
+						</div>						
+						<div class="media-body"  ng-click="starttest(t.test_id)">
+							<span id="test1" class="a"><b>Test:{{t.test_id}}</b></span><br>
+							<span id="test1" class="a"><b>Name:{{t.test_name}}</b></span><br>
+							<span id="test1" class="a"><b>Description:{{t.test_description}}</b></span><br>  
+						</div>
+						<br>
+					</div>					
+					<br>				             
+			</div>
+		</div>
+	</section>
+	
+	
+	
+	
+</section>
+	
+ 

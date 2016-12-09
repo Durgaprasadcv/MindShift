@@ -1,0 +1,60 @@
+<meta charset="utf-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />	  
+
+
+
+<style>
+	bgm-cyan {
+    background-color: rgba(103, 115, 179, 0.72) !important;
+}
+.palette-Indigo-50.bg {
+    background-color: #f0f1fb;
+}
+
+	tr:nth-child(odd){    background-color: rgba(221, 222, 223);}
+</style>
+
+
+
+
+<div   class="container c-boxed ">
+	<div ng-repeat="marks in mark" class="row pricing-table">
+		<div class="col-sm-4">
+			
+			<div class="card pt-item  dark palette-Indigo-50 bg">
+				<div class="pti-header bgm-cyan">
+					<span id="test1"class="md-headline"><b><center>Test:{{marks.testno}}</center></b></span><br>
+					<span id="test1"><center>Description:{{marks.description}}</center></span>		
+				</div>
+                
+				<div class="pti-body dark palette-Indigo-50 bg">
+					<div class="ptib-item">
+						<center><span id="test1" class="a">SCORE:80</span></center>
+						<center><span id="test1" class="a">Time Taken:4min</span></center>
+					</div>
+					
+
+								
+										<table class = "table table-striped">
+											<tr >
+												<th>Number of Questions</th>
+												<th>Marks</th>
+											</tr>
+											<tr>
+												<td>{{marks.questions}}</td>
+												<td>{{marks.totalmarks}}</td>	
+											</tr>	
+										</table>
+					
+				</div>
+                
+				<div class="pti-footer  dark palette-Indigo-50 bg">
+					<a href="#" class="bgm-cyan"><i class="zmdi zmdi-check"></i></a>
+				</div>
+			</div>
+		</div>
+	</div></div>
+
+	

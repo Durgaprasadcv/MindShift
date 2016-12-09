@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	</head>
+	<style>
+		@import url(https://fonts.googleapis.com/icon?family=Material+Icons); 
+		
+		.header md-toolbar md-icon.md-default-theme {
+		color:black;
+		}
+	</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>-->
+	
+	<!--<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+		
+		
+	<script src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script>-->
+	
+	
+	
+	
+	
+	<!-- <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">-->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	
+	
+	<link rel="stylesheet" href="assets/css/angular-material.min.css">
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/angular.min.js"></script>
+	<script src="assets/js/angular-material.min.js"></script>
+	
+	<!--<script src="js/material/angular-material.js"></script>-->
+   
+	<script src="assets/js/angular-animate.min.js"></script>		
+	<script src="js/material/angular-route.min.js"></script>
+	
+	<script src="assets/js/angular-aria.min.js"></script>
+	<script src="assets/js/angular-messages.min.js"></script>
+	<script src="assets/js/ngStorage.min.js"></script>
+	
+
+	
+	
+	<!-- ngVideo! -->
+	<script language="javascript" src="js/controllers/global.js"></script>
+	<script type="text/javascript" src="js/ng-video.js"></script>  
+	<script src="js/controllers/app.js"></script>
+	<script src="js/controllers/MyApp.js"></script> 
+  
+	
+	
+	<script language="javascript" src="js/controllers/inputcontroller.js"></script>
+	<script language="javascript" src="js/controllers/testController.js"></script>
+	
+	<script type="text/javascript" src="js/ng-video.js"></script>
+	<!-- Angular app! -->
+	<script type="text/javascript" src="js/Default.js"></script>
+	<script type="text/javascript" src="js/seekable.js"></script>
+	
+	<script type="text/javascript" src="js/controllers/VideoController.js"></script>
+	<script type="text/javascript" src="js/controllers/Videoreport.js"></script>
+	<style>
+		
+		@media only screen 
+		and (max-width: 736px) { 
+	.mobile {
+	display:block;
+	}
+	.desktop {
+	display:none;
+	}
+	.tablet {
+	display:none;
+	}
+	}
+	
+	@media only screen 
+	and (min-width: 736px) 
+	and (max-width: 1200px){ 
+	.tablet {
+	display:block;
+	}
+	.desktop {
+	display:none;
+	}
+	.mobile {
+	display:none;
+	}
+	}
+	
+	@media only screen 
+	and (min-width: 1200px) {
+	.desktop {
+	display:block;
+	}
+	.tablet {
+	display:none;
+	}
+	.mobile {
+	display:none;
+	}
+	}
+	
+	a {
+	text-decoration:none;
+	
+	transition: all 0.4s linear;
+	}
+	a:hover, a:focus {
+	color: red;
+	}
+	.md-sidenav-left md-whiteframe-z2{
+	color:pink;
+	}
+	
+	</style>
+	
+	<body ng-app="MyApp">
+	<div ng-controller="AppCtrl" class="header" >
+	
+	<md-sidenav class="md-sidenav-left md-whiteframe-z2"
+	md-component-id="left" style="width:25%">
+	<md-toolbar layout="row">
+	<div class="md-toolbar-tools">
+	<h2>
+	<span></span>
+	</h2>
+	<span flex></span>
+	<md-button class="md-icon-button" aria-label="Close Side Panel" ng-click="closeSideNavPanel()">
+	<md-tooltip>Close Side Panel</md-tooltip>
+	<!--<md-icon class="md-default-theme" class="material-icons">&#xE5CD;</md-icon>-->
+	<img src="assets/images/close.png" style="width:24px;height:24px;"/>
+	
+	
+	</md-button>
+	</div>
+	</md-toolbar> 
+	<md-content layout-padding="">
+	
+	<md-list>
+	<md-list-item>
+	<span><!--<md-icon class="md-default-theme" class="material-icons">&#xE88A;</md-icon>-->
+	<img src="assets/images/home.png" style="width:24px;height:24px;"/>
+	<a href="#/home">Home</a></span>							
+	</md-list-item>						
+	<md-list-item>
+	<span><!--<md-icon class="md-default-theme" class="material-icons">&#xE14F;</md-icon>-->
+		<img src="assets/images/test.png" style="width:24px;height:24px;"/>
+	<a href="#/videocard">Take a Test</a></span>					
+	</md-list-item>						
+	<md-list-item>
+	<span><!--<md-icon class="md-default-theme" class="material-icons">&#xE0E0;</md-icon>-->
+		<img src="assets/images/report.png" style="width:24px;height:24px;"/>
+	<a href="#/allreport">Report</a></span>						
+	</md-list-item>						
+	</md-list>
+	
+	</md-content> 
+	</md-sidenav>
+	<md-toolbar class="desktop">
+	<div class="md-toolbar-tools">
+	<md-button class="md-icon-button" aria-label="Side Panel" ng-click="openSideNavPanel()">
+	<md-tooltip>Side Panel</md-tooltip>
+	<img src="assets/images/sidemenu.png" style="width:20px;height:14px;"/>
+	</md-button>
+	<!--<md-button class="md-icon-button" aria-label="Icon">
+	<md-tooltip>User</md-tooltip>
+	<md-icon class="md-default-theme" md-svg-icon="fb.svg"></md-icon>
+	</md-button>-->
+	<h2>
+	<center><span>Angular</span><center>
+	</h2>
+	
+	<span flex></span>
+	
+	<md-button class="md-icon-button" aria-label="Messages">
+	<md-tooltip>Settings</md-tooltip>
+	<img src="assets/images/menu.png" style="width:24px;height:24px;"/>
+	</md-button>
+	</div>
+	</md-toolbar>
+	
+	<md-toolbar class="tablet">
+	<div class="md-toolbar-tools">
+	<md-button class="md-icon-button" aria-label="Side Panel" ng-click="openSideNavPanel()">
+	<md-tooltip>Side Panel</md-tooltip>
+	<img src="assets/images/sidemenu.png" style="width:20px;height:14px;"/>
+	</md-button>
+	
+	<h2>
+	<span>Heading</span>
+	</h2>
+	
+	<span flex></span>
+	
+	<md-button class="md-icon-button" aria-label="Messages">
+	<md-tooltip>Settings</md-tooltip>
+	<img src="assets/images/menu.png" style="width:24px;height:24px;"/>
+	</md-button>
+	</div>
+	</md-toolbar>
+	
+	
+	<md-toolbar class="mobile">
+	<div class="md-toolbar-tools" data-ng-show="showMobileMainHeader">
+	<md-button class="md-icon-button" aria-label="Side Panel" ng-click="openSideNavPanel()">
+	<md-tooltip>Side Panel</md-tooltip>
+	<!--<md-icon class="md-default-theme" class="material-icons">&#xE5D2;</md-icon>-->
+	<img src="assets/images/sidemenu.png" style="width:20px;height:14px;"/>
+	</md-button>
+	
+	<h2>
+	<!--<span>Heading</span>-->
+	</h2>
+	<span flex></span>
+	<md-button class="md-icon-button" aria-label="Messages">
+	<md-tooltip>Settings</md-tooltip>
+	<img src="assets/images/menu.png" style="width:24px;height:24px;"/>
+	</md-button>
+	</div>
+	<div class="md-toolbar-tools" data-ng-hide="showMobileMainHeader">
+	<md-button class="md-icon-button" aria-label="Back" data-ng-click="showMobileMainHeader = true">
+	<md-tooltip>Back</md-tooltip>
+	<md-icon class="material-icons">&#xE5C4;</md-icon>
+	</md-button>
+	
+	</div>
+	</md-toolbar>
+	
+	</div>
+	
+	<div class="container">
+	<div>
+	<!--<h1><a  href="#view">user</a></h1>-->
+	</div>
+	<div ng-view></div>
+	</div>
+	
+	
+	</body>
+	</html>					

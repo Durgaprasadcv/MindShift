@@ -1,0 +1,354 @@
+<!--<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	</head>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<link rel="stylesheet" href="assets/css/angular-material.css">
+	<link rel="stylesheet" href="assets/css/angular-material.min.css">
+	
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/angular.min.js"></script>
+	<script src="assets/js/angular-material.min.js"></script>
+	
+<script src="js/material/angular-material.js"></script>
+   
+	<script src="assets/js/angular-animate.min.js"></script>		
+	<script src="js/material/angular-route.min.js"></script>
+	
+	<script src="assets/js/angular-aria.min.js"></script>
+	<script src="assets/js/angular-messages.min.js"></script>
+	<script src="assets/js/ngStorage.min.js"></script>
+	
+	<style>
+	div[data-progress] {
+  box-sizing: border-box;
+  position: relative;
+  height: 80px;
+  width: 60px;
+  background: beige;
+  border-radius: 50%;
+  box-shadow: inset 0px 0px 0px 20px red;
+  transition: all 1s;
+  overflow: hidden;
+  top:8px;
+  left:50%;
+}
+.counter {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  left: 0%;
+  text-align: center;
+  line-height: 100px;
+  border-radius: 60%;
+  background: transparent;
+  z-index: 4;
+}
+div > div {
+  position: absolute;
+  height: 50%;
+  width: 50%;
+  background: inherit;
+  border-radius: 0%;
+}
+.quad1,
+.quad2 {
+  left: 50%;
+  transform-origin: left bottom;
+}
+.quad3,
+.quad4 {
+  left: 0%;
+  transform-origin: right top;
+}
+.quad1,
+.quad4 {
+  top: 0%;
+}
+.quad2,
+.quad3 {
+  top: 50%;
+}
+.quad1,
+.quad3 {
+  transform: skew(0deg); /* invisible at -90deg */
+}
+.quad2,
+.quad4 {
+  transform: skewY(0deg); /* invisible at 90deg */
+}
+
+/* Just for demo */
+
+/*body {
+  background: linear-gradient(90deg, crimson, indianred, purple);
+}*.
+div[data-progress] {
+  margin: 80px auto;
+}
+	</style>
+	<script>
+	var res=0;
+	var mn=0;
+	var a=1;
+	
+	var progress=0;
+	window.onload = function() {
+  var progressbar = document.querySelector('div[data-progress]'),
+    quad1 = document.querySelector('.quad1'),
+    quad2 = document.querySelector('.quad2'),
+    quad3 = document.querySelector('.quad3'),
+    quad4 = document.querySelector('.quad4'),
+    counter = document.querySelector('.counter');
+
+  var progInc = setInterval(incrementProg, 1000); // call function every second
+
+  function incrementProg() {
+   //progress = progressbar.getAttribute('data-progress'); //get current value
+   // res = progressbar.getAttribute('data-progress'); //get current value
+
+	
+     // increment the progress bar value by 1 with every iteration
+	//alert(progress);
+    progressbar.setAttribute('data-progress', progress); //set value to attribute
+    //counter.textContent = 15- parseInt(progress, 10); // set countdown timer's value
+	//alert(a);
+	if(a>0){
+	var mn=100/5;
+	progress=progress+mn;
+	  
+	
+	 setPie(progress);
+	a++;
+	
+	}
+	if (a>5) {	
+	 clearInterval(progInc); 
+	 
+	}
+	  //alert(counter.textContent);
+    //setPie(progress); // call the paint progress bar function based on progress value
+    //if (progress>100) {
+     // clearInterval(progInc); // clear timer when countdown is complete
+   // }
+	//progress++;
+	//alert(progress+" prg");
+	
+  }
+
+  function setPie(progress) {
+    /* If progress is less than 25, modify skew angle the first quadrant */
+    if (progress <= 25) {
+      quad1.setAttribute('style', 'transform: skew(' + progress * (-90 / 25) + 'deg)');
+    }
+
+    /* Between 25-50, hide 1st quadrant + modify skew angle of 2nd quadrant */
+    else if (progress > 25 && progress <= 50) {
+      quad1.setAttribute('style', 'transform: skew(-90deg)'); // hides 1st completely
+      quad2.setAttribute('style', 'transform: skewY(' + (progress - 25) * (90 / 25) + 'deg)');
+      progressbar.setAttribute('style', 'box-shadow: inset 0px 0px 0px 20px orange'); 
+    }
+
+    /* Between 50-75, hide first 2 quadrants + modify skew angle of 3rd quadrant */
+    else if (progress > 50 && progress <= 75) {
+      quad1.setAttribute('style', 'transform: skew(-90deg)'); // hides 1st completely
+      quad2.setAttribute('style', 'transform: skewY(90deg)'); // hides 2nd completely
+      quad3.setAttribute('style', 'transform: skew(' + (progress - 50) * (-90 / 25) + 'deg)');
+      progressbar.setAttribute('style', 'box-shadow: inset 0px 0px 0px 20px yellow');
+    }
+
+    /* Similar to above for value between 75-100 */
+    else if (progress > 75 && progress <= 100) {
+      quad1.setAttribute('style', 'transform: skew(-90deg)'); // hides 1st completely
+      quad2.setAttribute('style', 'transform: skewY(90deg)'); // hides 2nd completely
+      quad3.setAttribute('style', 'transform: skew(-90deg)'); // hides 3rd completely
+      quad4.setAttribute('style', 'transform: skewY(' + (progress - 75) * (90 / 25) + 'deg)');
+      progressbar.setAttribute('style', 'box-shadow: inset 0px 0px 0px 20px green');
+    }
+  }
+}
+	</script>
+	<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+<div data-progress="0">
+  <div class="quad1"></div>
+  <div class="quad2"></div>
+  <div class="quad3"></div>
+  <div class="quad4"></div>
+  <div class='counter'></div>
+</div>
+</html>-->
+
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	</head>
+	
+	
+	
+	<style>
+	div[data-progress] {
+  box-sizing: border-box;
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  background: black;
+  border-radius: 50%;
+  box-shadow: inset 0px 0px 0px 5px red;
+  transition: all 1s;
+  overflow: hidden;
+  top:0px;
+  left:0px;
+}
+.counter {
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  bottom: 5px;
+  left:5px;
+  text-align: center;
+  line-height: 100px;
+  border-radius: 50px;
+  background: pink;
+  z-index: 4;
+}
+div > span {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  background: inherit;
+  border-radius: 0%;
+}
+.quad1,
+.quad2 {
+  left: 50%;
+  transform-origin: left bottom;
+}
+.quad3,
+.quad4 {
+  left: 0%;
+  transform-origin: right top;
+}
+.quad1,
+.quad4 {
+  top: 0%;
+}
+.quad2,
+.quad3 {
+  top: 50%;
+}
+.quad1,
+.quad3 {
+  transform: skew(0deg); /* invisible at -90deg */
+}
+.quad2,
+.quad4 {
+  transform: skewY(0deg); /* invisible at 90deg */
+}
+
+/* Just for demo */
+
+/*body {
+  background: linear-gradient(90deg, crimson, indianred, purple);
+}*.
+div[data-progress] {
+  margin: 100px auto;
+}
+	</style>
+	<script>
+	var res=0;
+	var mn=0;
+	var a=1;
+	
+	var progress=0;
+	window.onload = function() {
+  var progressbar = document.querySelector('div[data-progress]'),
+    quad1 = document.querySelector('.quad1'),
+    quad2 = document.querySelector('.quad2'),
+    quad3 = document.querySelector('.quad3'),
+    quad4 = document.querySelector('.quad4'),
+    counter = document.querySelector('.counter');
+
+  var progInc = setInterval(incrementProg, 1000); // call function every second
+
+  function incrementProg() {
+   //progress = progressbar.getAttribute('data-progress'); //get current value
+   // res = progressbar.getAttribute('data-progress'); //get current value
+
+	
+     // increment the progress bar value by 1 with every iteration
+	//alert(progress);
+    progressbar.setAttribute('data-progress', progress); //set value to attribute
+    counter.textContent = 10- parseInt(a, 10); // set countdown timer's value
+	//alert(a);
+	if(a>0){
+	var mn=100/10;
+	progress=progress+mn;
+	  
+	
+	 setPie(progress);
+	a++;
+	//alert(progress);
+	}
+	if (a>10) {	
+	 clearInterval(progInc); 
+	// alert(progInc);
+	}
+	  //alert(counter.textContent);
+    //setPie(progress); // call the paint progress bar function based on progress value
+    //if (progress>100) {
+     // clearInterval(progInc); // clear timer when countdown is complete
+   // }
+	//progress++;
+	//alert(progress+" prg");
+	
+  }
+
+  function setPie(progress) {
+    /* If progress is less than 25, modify skew angle the first quadrant */
+    if (progress <= 25) {
+      quad1.setAttribute('style', 'transform: skew(' + progress * (-90 / 25) + 'deg)');
+    }
+
+    /* Between 25-50, hide 1st quadrant + modify skew angle of 2nd quadrant */
+    else if (progress > 25 && progress <= 50) {
+      quad1.setAttribute('style', 'transform: skew(-90deg)'); // hides 1st completely
+      quad2.setAttribute('style', 'transform: skewY(' + (progress - 25) * (90 / 25) + 'deg)');
+      progressbar.setAttribute('style', 'box-shadow: inset 0px 0px 0px 5px orange'); 
+    }
+
+    /* Between 50-75, hide first 2 quadrants + modify skew angle of 3rd quadrant */
+    else if (progress > 50 && progress <= 75) {
+      quad1.setAttribute('style', 'transform: skew(-90deg)'); // hides 1st completely
+      quad2.setAttribute('style', 'transform: skewY(90deg)'); // hides 2nd completely
+      quad3.setAttribute('style', 'transform: skew(' + (progress - 50) * (-90 / 25) + 'deg)');
+      progressbar.setAttribute('style', 'box-shadow: inset 0px 0px 0px 5px yellow');
+    }
+
+    /* Similar to above for value between 75-100 */
+    else if (progress > 75 && progress <= 100) {
+      quad1.setAttribute('style', 'transform: skew(-90deg)'); // hides 1st completely
+      quad2.setAttribute('style', 'transform: skewY(90deg)'); // hides 2nd completely
+      quad3.setAttribute('style', 'transform: skew(-90deg)'); // hides 3rd completely
+      quad4.setAttribute('style', 'transform: skewY(' + (progress - 75) * (90 / 25) + 'deg)');
+      progressbar.setAttribute('style', 'box-shadow: inset 0px 0px 0px 5px red');
+    }
+  }
+}
+	</script>
+	<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+<div data-progress="0">
+  <span class="quad1"></span>
+  <span class="quad2"></span>
+  <span class="quad3"></span>
+  <span class="quad4"></span>
+  <span class='counter'></span>
+</div>
+</html>

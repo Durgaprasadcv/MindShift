@@ -1,0 +1,80 @@
+
+	div[data-progress] {
+ 
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  background: transparent;
+  border-radius: 50%;
+ /* box-shadow: inset 0px 0px 0px 5px blue;*/
+  transition: all 1s;
+  overflow: hidden;
+  top:10%;
+  left:80%;
+}
+.counter {
+  position: absolute;
+  height: 80%;
+  width: 80%;
+  bottom: 10%;
+  left: 10%;
+  text-align: center;
+  line-height: 43px;
+  border-radius: 60%;
+  background: pink;
+ color:red;
+ font-weight:bold;
+  z-index: 4;
+}
+/*div > div {
+  position: absolute;
+  height: 50%;
+  width: 50%;
+  background: inherit;
+  border-radius: 0%;
+}*/
+
+
+div > span {
+  position: absolute;
+  height: 50%;
+  width: 50%;
+  background: inherit;
+  border-radius: 0%;
+}
+
+.quad1,
+.quad2 {
+  left: 50%;
+  transform-origin: left bottom;
+}
+.quad3,
+.quad4 {
+  left: 0%;
+  transform-origin: right top;
+}
+.quad1,
+.quad4 {
+  top: 0%;
+}
+.quad2,
+.quad3 {
+  top: 50%;
+}
+.quad1,
+.quad3 {
+  transform: skew(0deg); /* invisible at -90deg */
+}
+.quad2,
+.quad4 {
+  transform: skewY(0deg); /* invisible at 90deg */
+}
+
+/* Just for demo */
+
+/*body {
+  background: linear-gradient(90deg, crimson, indianred, purple);
+}*.
+div[data-progress] {
+  margin: 40px auto;
+}

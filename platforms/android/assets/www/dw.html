@@ -1,0 +1,138 @@
+<html lang="en" >
+	
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+	<head>
+		<!--<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+			<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+			<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+			<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+			<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+			<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+			<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+			<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+		<script  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-route.js"></script>
+		
+		
+		
+		<!-- <script src="http://ngmaterial.assets.s3.amazonaws.com/svg-assets-cache.js"></script>-->
+		
+		
+		
+		<link rel="stylesheet" href="assets/css/angular-material.min.css">
+		<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		
+		<script src="assets/js/angular.min.js"></script>
+		<script src="assets/js/angular-animate.min.js"></script>
+		<script src="assets/js/angular-aria.min.js"></script>
+		<script src="assets/js/angular-messages.min.js"></script>
+		<script src="js/material/angular-route.min.js"></script>
+		<script src="assets/js/angular-material.min.js"></script>
+		<script src="assets/js/ngStorage.min.js"></script>
+		<script src="assets/js/cordova.js"></script>
+		
+		
+		<script src="assets/FileSaver.js"></script>
+		<script src="assets/FileSaver.min.js"></script>
+		
+		<script src="js/material/angular-material.js"></script>
+		
+	<script src="assets/js/download.js"></script>
+	<!--<script src="assets/js/download.min.js"></script>-->
+		
+		
+		
+	
+	
+	<script>
+					angular
+			  .module('download', ['ngMaterial','ngRoute'])
+			  .controller('downloadcontroller', function($scope,$location/*$timeout,$cordovaFileTransfer*/) {
+			
+		//alert("good");
+	/*	document.addEventListener('deviceready', function () {
+  //angular.element(document).ready(function () {
+    var url = "http://cdn.wall-pix.net/albums/art-space/00030109.jpg";
+	//alert(url);
+    var targetPath = cordova.file.documentsDirectory + "testImage.png";
+    var trustHosts = true;
+    var options = {};
+
+    $cordovaFileTransfer.download(url, targetPath, options, trustHosts)
+      .then(function(result) {
+        // Success!
+			alert("success");
+      }, function(err) {
+        // Error
+		alert("error");
+      }, function (progress) {
+        $timeout(function () {
+          $scope.downloadProgress = (progress.loaded / progress.total) * 100;
+        });
+      });
+  //});
+   }, false);*/
+   
+   
+document.addEventListener("deviceready", onDeviceReady, false);
+var uri;
+ var fileURL;
+  var fileTransfer;
+  
+function onDeviceReady() {
+ 
+  fileTransfer = new FileTransfer();
+    uri = encodeURI("http://s14.postimg.org/i8qvaxyup/bitcoin1.jpg");
+   //var fileURL =  "///storage/emulated/0/DCIM/myFile";
+     fileURL =  "../uploaded";
+
+   fileTransfer.download(
+      uri, fileURL, function(entry) {
+         console.log("download complete: " + entry.toURL());
+      },
+		
+      function(error) {
+         console.log("download error source " + error.source);
+         console.log("download error target " + error.target);
+         console.log("download error code" + error.code);
+      },
+		
+      false, {
+         headers: {
+            "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
+         }
+      }
+   );
+}
+ 
+//onDeviceReady();
+
+			  });	
+	</script>
+	</head>
+	<body ng-app="download">  
+		<div ng-controller="downloadcontroller" layout="column" ng-cloak>
+			
+			<md-content layout-padding>
+				
+				
+				
+<!--<video id="video" autobuffer height="240" width="360">
+<source src="media/simple.mp4">
+<source src="BigBuck.webm" type="video/webm">
+<source src="BigBuck.theora.ogv" type="video/ogg">
+</video>-->
+
+
+			</md-content>
+					
+					</div>
+					</body>
+					</html>					
+					

@@ -1,0 +1,4 @@
+[0906/153029:ERROR:crash_report_database_win.cc(412)] unexpected header
+[1114/105336:ERROR:process_reader_win.cc(233)] ReadMemory at 0x8b7000 of 36864 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[1114/105336:ERROR:crash_report_exception_handler.cc(98)] WriteEverything failed
+[1114/105336:ERROR:scoped_process_suspend.cc(38)] NtResumeProcess: An attempt was made to access an exiting process.  (0xc000010a)

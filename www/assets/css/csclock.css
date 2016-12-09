@@ -1,0 +1,187 @@
+* {
+  padding : 0;
+  margin : 0;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg);}
+	100% { transform: rotate(360deg);}
+}	
+
+.cover:before,.cover:after{content:" ";display:table}
+
+body {
+	background : -moz-linear-gradient(top,  #dee5dd 0%, #272f24 0%, #252d1e 0%, #27301d 1%, #252e1b 1%, #262e21 1%, #262f1e 2%, #262f1e 3%, #2d3623 18%, #303926 21%, #323b28 21%, #313a27 22%, #37402d 25%, #38412e 28%, #3b4431 29%, #3e4732 32%, #414a37 34%, #434d34 35%, #455139 37%, #445038 37%, #4a543c 38%, #4a563e 40%, #555f47 44%, #555f46 45%, #586249 45%, #5e684f 49%, #69735a 53%, #677158 53%, #6c765d 54%, #707a5f 56%, #747e63 57%, #737d62 58%, #788267 58%, #778166 59%, #778669 60%, #7d866b 61%, #7c896d 61%, #808d71 62%, #839074 64%, #8c997d 66%, #8e9b7f 67%, #96a085 68%, #9ca68b 71%, #a2ac91 72%, #a2ac91 72%, #a6b095 73%, #a6b095 74%, #a8b299 74%, #acb69d 75%, #acb69d 75%, #b1bba2 76%, #b0baa1 76%, #b7c1a6 78%, #b9c59d 80%, #b9c59d 80%, #bcc99e 80%, #bdca9e 81%, #bdca9c 82%, #beca98 82%, #c1ce98 83%, #c1cf92 83%, #c4d390 85%, #c4d48d 86%, #c5d688 87%, #c7d987 88%, #c7da81 90%, #c7d983 90%, #c8dc7b 91%, #c8dc7d 92%, #c8dd74 94%, #c9de77 95%, #c9df72 96%, #cae071 99%, #cae16d 99%, #c9df70 100%, #cee37a 100%); /* FF3.6+ */
+
+	background : -webkit-linear-gradient(top,  #dee5dd 0%,#272f24 0%,#252d1e 0%,#27301d 1%,#252e1b 1%,#262e21 1%,#262f1e 2%,#262f1e 3%,#2d3623 18%,#303926 21%,#323b28 21%,#313a27 22%,#37402d 25%,#38412e 28%,#3b4431 29%,#3e4732 32%,#414a37 34%,#434d34 35%,#455139 37%,#445038 37%,#4a543c 38%,#4a563e 40%,#555f47 44%,#555f46 45%,#586249 45%,#5e684f 49%,#69735a 53%,#677158 53%,#6c765d 54%,#707a5f 56%,#747e63 57%,#737d62 58%,#788267 58%,#778166 59%,#778669 60%,#7d866b 61%,#7c896d 61%,#808d71 62%,#839074 64%,#8c997d 66%,#8e9b7f 67%,#96a085 68%,#9ca68b 71%,#a2ac91 72%,#a2ac91 72%,#a6b095 73%,#a6b095 74%,#a8b299 74%,#acb69d 75%,#acb69d 75%,#b1bba2 76%,#b0baa1 76%,#b7c1a6 78%,#b9c59d 80%,#b9c59d 80%,#bcc99e 80%,#bdca9e 81%,#bdca9c 82%,#beca98 82%,#c1ce98 83%,#c1cf92 83%,#c4d390 85%,#c4d48d 86%,#c5d688 87%,#c7d987 88%,#c7da81 90%,#c7d983 90%,#c8dc7b 91%,#c8dc7d 92%,#c8dd74 94%,#c9de77 95%,#c9df72 96%,#cae071 99%,#cae16d 99%,#c9df70 100%,#cee37a 100%); /* Chrome10+,Safari5.1+ */
+
+	background-repeat : no-repeat;
+}
+
+div.container1 {
+	width  : 500px;
+	height : 500px;
+	margin : auto;
+	margin-top : 100px;
+}
+
+div.container1 div.out {
+	width  : 400px;
+	height : 400px;
+	margin : auto;
+	border-radius : 200px;
+	background : -moz-linear-gradient(top,  rgba(242,242,242,1) 0%, rgba(219,219,219,1) 37%, rgba(191,191,191,1) 37%, rgba(117,117,117,1) 100%); /* FF3.6+ */
+	background : -webkit-linear-gradient(top,  rgba(242,242,242,1) 0%,rgba(219,219,219,1) 37%,rgba(191,191,191,1) 37%,rgba(117,117,117,1) 100%); /* Chrome10+,Safari5.1+ */
+}
+
+div.container1 div.middle {
+	width  : 380px;
+	height : 380px;
+	margin : 10px auto;
+	border-radius : 190px;
+	background : -moz-linear-gradient(top,  rgba(124,124,124,1) 1%, rgba(175,175,175,1) 49%, rgba(224,224,224,1) 100%); /* FF3.6+ */
+	background : -webkit-linear-gradient(top,  rgba(124,124,124,1) 1%,rgba(175,175,175,1) 49%,rgba(224,224,224,1) 100%); /* Chrome10+,Safari5.1+ */
+}
+
+div.container1 div.in {
+	position : relative;
+	overflow : hidden;
+	width    : 370px;
+	height   : 370px;
+	margin   : 5px auto;
+	border-radius    : 185px;
+	background-color : #F6F6F6;
+  box-shadow  : inset 0 150px 0 0 #eee;
+}
+
+
+
+div.in > div {
+	position : absolute;
+	z-index  : 2;
+}
+
+div.long-marker , div.short-marker {
+	width      : 4px;
+	height     : 350px;
+	left       : 183px;
+	top        : 10px;
+}
+
+div.in div.long-marker {
+	background : -moz-linear-gradient(top,  rgba(94,94,94,1) 0%, rgba(117,117,117,1) 13%, rgba(116,116,116,0) 14%, rgba(8,8,8,0) 86%, rgba(7,7,7,1) 87%, rgba(0,0,0,1) 100%); /* FF3.6+ */
+	background : -webkit-linear-gradient(top, rgba(117,117,117,1) 13%,rgba(116,116,116,0) 14%,rgba(8,8,8,0) 86%,rgba(7,7,7,1) 87%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
+}
+
+div.in div.short-marker {
+	background : -moz-linear-gradient(top,  rgba(94,94,94,1) 0%, rgba(117,117,117,1) 7%, rgba(116,116,116,0) 8%, rgba(1,1,1,0) 92%, rgba(0,0,0,1) 93%, rgba(0,0,0,1) 100%); /* FF3.6+ */
+	background : -webkit-linear-gradient(top,  rgba(94,94,94,1) 0%,rgba(117,117,117,1) 7%,rgba(116,116,116,0) 8%,rgba(1,1,1,0) 92%,rgba(0,0,0,1) 93%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
+}
+
+div.zero {
+	transform :rotate(0deg);
+}
+
+div.one {
+	transform :rotate(30deg);
+}
+
+div.two {
+	transform :rotate(60deg);
+}
+
+div.three {
+	transform :rotate(90deg);
+}
+
+div.four {
+	transform :rotate(300deg);
+}
+
+div.five {
+	transform :rotate(330deg);
+}
+
+div.h-pointer {
+	left   : 180px;
+	top    : 110px;
+	width  : 10px;
+	height : 100px;
+
+	animation        : rotate 216000s infinite linear;
+	transform-origin : 50% 76%;
+	background : -moz-linear-gradient(left,  rgba(69,72,77,1) 0%, rgba(0,0,0,1) 100%); /* FF3.6+ */
+	background : -webkit-linear-gradient(left,  rgba(69,72,77,1) 0%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
+}
+
+div.m-pointer {
+	width : 6px;
+	height: 210px;
+	left  : 182px;
+	top   : 10px;
+
+	animation        : rotate 3600s infinite linear;
+	transform-origin : 50% 84%;
+	background : rgb(174,188,191); /* Old browsers */
+	background : -moz-linear-gradient(top,  rgba(174,188,191,1) 0%, rgba(110,119,116,1) 31%, rgba(48,48,48,1) 31%, rgba(15,15,15,1) 100%); /* FF3.6+ */
+	background : -webkit-linear-gradient(top,  rgba(174,188,191,1) 0%,rgba(110,119,116,1) 31%,rgba(48,48,48,1) 31%,rgba(15,15,15,1) 100%); /* Chrome10+,Safari5.1+ */
+}
+
+div.s-pointer {
+	width : 4px;
+	height: 190px;
+	left  : 183px;
+	top   : 10px;
+
+	background : -moz-linear-gradient(top,  rgba(0,0,0,1) 1%, rgba(0,0,0,1) 30%, rgba(161,188,115,1) 30%, rgba(205,235,142,1) 100%); /* FF3.6+ */
+	background : -webkit-linear-gradient(top,  rgba(0,0,0,1) 1%,rgba(0,0,0,1) 30%,rgba(161,188,115,1) 30%,rgba(205,235,142,1) 100%); /* Chrome10+,Safari5.1+ */
+
+	animation        : rotate 60s infinite linear;
+	transform-origin : 50% 92%;
+}
+
+div.in div.center {
+	width  : 20px;
+	height : 20px;
+	border-radius : 10px;
+	left   : 175px;
+	top    : 175px;
+	background : -moz-linear-gradient(top,  rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%, rgba(102,102,102,1) 25%, rgba(71,71,71,1) 39%, rgba(44,44,44,1) 73%, rgba(43,43,43,1) 76%, rgba(17,17,17,1) 83%, rgba(0,0,0,1) 83%, rgba(28,28,28,1) 100%, rgba(19,19,19,1) 100%); /* FF3.6+ */
+	background : -webkit-linear-gradient(top,  rgba(76,76,76,1) 0%,rgba(89,89,89,1) 12%,rgba(102,102,102,1) 25%,rgba(71,71,71,1) 39%,rgba(44,44,44,1) 73%,rgba(43,43,43,1) 76%,rgba(17,17,17,1) 83%,rgba(0,0,0,1) 83%,rgba(28,28,28,1) 100%,rgba(19,19,19,1) 100%); /* Chrome10+,Safari5.1+ */
+}
+
+div.center > div {
+	width  : 12px;
+	height : 12px;
+	border-radius : 6px;
+	margin : auto;
+	margin-top : 4px;
+	background : -moz-linear-gradient(top,  rgba(165,201,86,1) 0%, rgba(205,235,142,1) 100%); /* FF3.6+ */
+	background : -webkit-linear-gradient(top,  rgba(165,201,86,1) 0%,rgba(205,235,142,1) 100%); /* Chrome10+,Safari5.1+ */
+}
+
+
+
+/*
+	<div class="container1">
+  	<div class="cover out">
+			<div class="cover middle">
+				<div class="cover in">
+				<!--<div class="long-marker zero"></div>
+					<div class="short-marker one"></div>
+					<div class="long-marker three"></div>
+					<div class="short-marker two"></div>
+					<div class="short-marker four"></div>
+				<div class="short-marker five"></div>
+					<div class="h-pointer"></div>
+				<div class="m-pointer"></div>-->
+					<div class="s-pointer"></div>
+					<div class="cover center">
+						<div></div>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+
+*/
