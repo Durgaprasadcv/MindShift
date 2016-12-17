@@ -1,112 +1,84 @@
-<html lang="en" >
-	
-	
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	
-	<head>
-		
-		<link rel="stylesheet" href="assets/css/angular-material.min.css">
-		<link rel="stylesheet" href="assets/css/font-awesome.min.css">
-		
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-		
+<head>
+  <meta charset="UTF-8">
+  <title>Material Login Form</title>
+  
+  
+  <link rel="stylesheet" href="assets/css/angular-material.min.css">
+		<link rel="stylesheet" href="assets/css/font-awesome.min.css">	
 		<script src="assets/js/angular.min.js"></script>
-		<script src="assets/js/angular-animate.min.js"></script>
+		<script src="assets/js/angular-animate.min.js"></script>	
 		<script src="assets/js/angular-aria.min.js"></script>
-		<script src="assets/js/angular-messages.min.js"></script>
-		
+		<script src="assets/js/angular-messages.min.js"></script>		
 		<script src="assets/js/ngStorage.min.js"></script>
 		<script src="js/material/angular-material.js"></script>
+		  <script type="text/javascript" src="cordova.js"></script>
+		  <script src="assets/ngCordova/dist/ng-cordova.js"></script>
+		<script src="assets/ngCordova/dist/ng-cordova.min.js"></script>
+		<script src="assets/js/jquery-1.11.1.min.js"></script>		
+		<script src="assets/js/jquery-ui.min.js"></script>
 		
-		
-		<!-- Vendor CSS -->
-		<link href="newassets/vendors/bower_components/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet">
-		<link href="newassets/vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
-		<link href="newassets/vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
-		<link href="newassets/vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet">        
-		<link href="newassets/vendors/bower_components/google-material-color/dist/palette.css" rel="stylesheet">
-		
-		<!-- CSS -->
-		<link href="newassets/css/app.min.1.css" rel="stylesheet">
-		<link href="newassets/css/app.min.2.css" rel="stylesheet"> 
-		
-		<script src="js/controllers/Videologincontroller.js"></script> 
-		<!--<script language="javascript" src="js/controllers/logincontroller.js"></script>  -->
-		<style>
-			
-			.md-button.logo {
-			height: 30px;
-			width: 90px;
-			}
-			
-			
-			
-			.a{
-			color: blue;
-			}
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 
-			.palette-Teal.bg {
-			background-color: rgba(103, 115, 179, 0.83);
-			}
+  <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
+<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+<script src="js/controllers/Videologincontroller.js"></script> 
+      <link rel="stylesheet" href="assets/css/login.css"> 
+</head>
+	<style>
+			
 			#img{
 			border:2px solid #dddddd;
 			background-color:white;		
 			border-radius:50%;
 			top:0%;
-			left:0%;			
-			width: 60px;
-			height:60px; 			
+			left:0%;		
+			width: 90px;
+			height: 90px; 			
 			}
-			
-			#txtbox{			
-			border: 1px solid  blue;
-			transition: border 0.3s;
-
+			#a{
+			color: #ed2553;
 			}
 		</style>   
-		
-	</head>
-	<body ng-app="loginapp">  
-		<div ng-controller="Videologincontroller" layout="column" ng-cloak>
-			<div class="login" data-lbg="teal">
-				
-				
-				
-				
-				<div class="l-block toggled" id="l-login">
-				<div class="lb-header palette-Teal bg">
-					
-					
-					<center><img id="img" src="newassets/img/demo/invoice-logo.png" alt=""></center><br>			
-					
-					<b>Please Sign in here!</b><br>
-				</div>
-				
-				<div class="lb-body">
-					<form role="form" ng-submit="login()">											
-				   <input id="txtbox" type="text"ng-model="Name" class="form-control" placeholder="User Name" required autofocus/><br>					
-				   <input id="txtbox" type="password" ng-model="Password" class="form-control" placeholder="Password" required autofocus/><br>											
-						<center><md-button  class=" md-raised md-primary" type="submit">Submit</md-button></center>
-						<span>{{errormsg}}</span>
-					</form>
-					<div class="m-t-20">
-					
-						<a data-block="#l-forget-password" data-bg="purple" href="#" class="palette-Teal bg text">Forgot password?</a>
-					</div>
-				</div>				
-				</div>
-				
-				
-			</div>
-			<!-- Javascript Libraries -->
-			<script src="newassets/vendors/bower_components/jquery/dist/jquery.min.js"></script>
-			<script src="newassets/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-			<script src="newassets/vendors/bower_components/Waves/dist/waves.min.js"></script>
-		
-		
-		<script src="newassets/js/functions.js"></script>
-		
-	</body>
-</html>						
+<body ng-app="loginapp">
+  <div ng-controller="Videologincontroller" layout="column" ng-cloak>
+<!-- Mixins-->
+<!-- Pen Title-->
+<div class="pen-title">
+  <!--<h3>Material Login Form</h3>-->
+  	<center><img id="img" src="assets/images/Mindshift.png" alt=""></center><br>		
+</div>
+
+<div class="container">
+  <div class="card"></div>
+  <div class="card">
+    <h1 class="title">Login</h1>
+   <form role="form" ng-submit="login()">
+      <div class="input-container">
+        <input  ng-model="Name" type="#{type}" id="#{label}" required="required"/>
+        <label for="#{label}">Username</label>
+        <div class="bar"></div>
+      </div>
+      <div class="input-container">
+        <input ng-model="Password" type="#{type}" id="#{label}" required="required"/>
+        <label for="#{label}">Password</label>
+        <div class="bar"></div>
+      </div>
+      <div class="button-container">
+        <button><span>Go</span></button>
+      </div>
+	 {{errormsg}}
+      <div class="footer" id="a"><a href="#">Forgot your password?</a></div>
+	
+    </form>
+  </div>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+   <!-- <script src="js/index.js"></script>-->
+</div>
+</body>
+</html>

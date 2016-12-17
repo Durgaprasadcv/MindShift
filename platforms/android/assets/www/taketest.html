@@ -1,20 +1,38 @@
 
 
 <style>
-	.palette-Indigo-50.bg {
-    background-color: #f3f3f3;
+	#test{
+	text-shadow: 1px 2px #5B5BA81A;
+	font-style: oblique;
+	color:#3f51b5;
+	font-family:"Comic Sans MS", cursive, sans-serif;
 	}
+	#test1{
 	
+	font-style: oblique;
+	text-shadow: 1px 2px 3px #666;
+	font-family:"Trebuchet MS", Helvetica, sans-serif;
+	}
 	.palette-Indigo-100.bg {
-    background-color: rgb(103, 115, 179);
+    background-color: #6773b3;
+	}	
+	
+	#progressbar2{
+	bottom:30px;
+	
 	}
 	
-	#colr{
-	background-color: lightblue;
-	}
-	
-	
-	.fabSpeedDial .text-capitalize {
+	.carousel {
+    background-color:white;
+    display:flex;
+    align-items:center;
+}
+.carousel-inner{
+position:relative;
+}
+
+
+ .fabSpeedDial .text-capitalize {
          text-transform: capitalize; 
       }
       .fabSpeedDial .md-fab:hover, .fabSpeedDialdemoBasicUsage .md-fab.md-focused {
@@ -26,28 +44,37 @@
       .fabSpeedDial .lock-size {
          min-width: 300px;
          min-height: 300px;
-         width: 300px;
-         height: 300px;
+         width: 100px;
+         height: 100px;
          margin-left: auto;
          margin-right: auto; 
-      }	 
+
+
 </style>
 
-<!--<div class="card dark palette-Indigo-50 bg"  ng-repeat="t in testm">
-	<div class="card-header">
-	<img ng-src={{t.test_image}} class="md-card-image" height="102px" width="100%" alt="Learn HTML5"></img>
-	</div>	
-	<div class="card-body">
-	<span id="test1" class="a"><b><center>Test:{{t.test_id}}</center></b></span>
-	<span id="test1" class="a"><b><center>Name:{{t.test_name}}</center></b></span>
-	<span id="test1" class="a"><b><center>Description:{{t.test_description}}</center></b></span>  <br>     
-	<center>
-	
-	<button class="btn dark palette-Indigo-100 bg" ng-click="starttest(t.test_id)">Begin Training</button>
-	</center>	<br>
-	</div>
-</div>-->
+<div id="this-carousel-id" class="carousel slide"><!-- class of slide for animation -->
+	  <div class="carousel-inner">
+		<div class="item active"><!-- class of active since it's the first item -->
+		<br>
+		<center><h4>Test Report</h4></center><br>
+		 <canvas id="base" height="15" width="50"class="chart-line"
+						  chart-data="data" chart-labels="labels" chart-series="series"chart-colors="colours" >
+						</canvas>	<br></br>
+		  
+		</div>
+		<div class="item">
+		<center> <div id="chart-container"></div></center>
+		
+		</div>
+		
+	  </div><!-- /.carousel-inner -->
+	  <!--  Next and Previous controls below
+			href values must reference the id for this carousel -->
+		<a class="carousel-control left" href="#this-carousel-id" data-slide="prev">&lsaquo;</a>
+		<a class="carousel-control right" href="#this-carousel-id" data-slide="next">&rsaquo;</a>
+	</div><!-- /.carousel -->
 
+	
 
 <section id="main">
 	
@@ -55,28 +82,31 @@
 		<div class="container">
 			<div class="c-header">
 				<h2></h2>
-			</div>			
+			</div>
+			
 			<div class="card">
-					<div class="list-group-item media"  ng-style="mycolor"  id="colr1"  ng-repeat="t in testm">
-						<br>						
-						<div class="pull-left">
-							<img class="avatar-img" src={{t.test_image}} alt="">
-						</div>						
-						<div class="media-body"  ng-click="starttest(t.test_id)">
-							<span id="test1" class="a"><b>Test:{{t.test_id}}</b></span><br>
-							<span id="test1" class="a"><b>Name:{{t.test_name}}</b></span><br>
-							<span id="test1" class="a"><b>Description:{{t.test_description}}</b></span><br>  
-						</div>
-						<br>
-					</div>					
-					<br>				             
+			
+				<div class="list-group-item media" ng-repeat="t in testss1"  
+				ng-style="listcolor(t.test_id)" ng-disabled="listdisable(t.test_id)">
+					<br>			
+					<div id="progressbar2" ng-show='progress' class="progress" style="width:100%;height:12px;color=pink";>
+		
+			</div>	
+					<div class="pull-left">
+						<img class="avatar-img" src={{t.test_image}} alt="">
+					</div>						
+					<div class="media-body"  ng-click="starttest(t.test_id)">
+						<span id="test1" class="a"><b>Test:{{t.test_id}}</b></span><br>
+						<span id="test1" class="a"><b>Name:{{t.test_name}}</b></span><br>
+						<span id="test1" class="a"><b>Description:{{t.test_description}}</b></span><br>  
+					</div>
+					<br>
+				</div>					
+				<br>				             
 			</div>
 		</div>
+		
 	</section>
-	
-	
-	
-	
 </section>
-	
- 
+
+

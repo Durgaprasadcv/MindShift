@@ -5,6 +5,9 @@
   <content src="index.html"/>
   <preference name="DisallowOverscroll" value="true"/>
   <preference name="android-minSdkVersion" value="14"/>
+  <preference name="AndroidPersistentFileLocation" value="Internal" />
+  <preference name="AndroidPersistentFileLocation" value="Compatibility" />
+
   <plugin name="cordova-plugin-battery-status" source="npm" spec="~1.1.1"/>
   <plugin name="cordova-plugin-camera" source="npm" spec="~2.1.1"/>
   <plugin name="cordova-plugin-media-capture" source="npm" spec="~1.2.0"/>
@@ -25,9 +28,8 @@
   <plugin name="cordova-plugin-statusbar" source="npm" spec="~2.1.2"/>
   <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.0"/>
   <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1"/>
-   <!--<plugin name="FileTransfer" value="org.apache.cordova.FileTransfer"/>
-    <plugin name="Storage" value="org.apache.cordova.Storage"/>
-  <plugin name="org.apache.cordova.file" spec="1.0.1" source="pgb" />-->
+  <plugin name="cordova-plugin-networkinterface" source="npm" />
+ 
   <icon src="icon.png"/>
   <platform name="android">
     <icon src="www/res/icon/android/logo.png" density="ldpi"/>

@@ -175,10 +175,18 @@
         "is_top_level": true,
         "variables": {}
     },
-    "cordova-sqlite-plugin": {
+    "cordova-sqlite-storage": {
         "source": {
             "type": "registry",
-            "id": "cordova-sqlite-plugin"
+            "id": "cordova-sqlite-storage"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-networkinterface": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-networkinterface"
         },
         "is_top_level": true,
         "variables": {}

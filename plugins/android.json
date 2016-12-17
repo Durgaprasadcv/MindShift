@@ -70,7 +70,10 @@
         "cordova-plugin-file": {
             "PACKAGE_NAME": "com.djit.avalia"
         },
-        "cordova-sqlite-plugin": {
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "com.djit.avalia"
+        },
+        "cordova-plugin-networkinterface": {
             "PACKAGE_NAME": "com.djit.avalia"
         }
     },

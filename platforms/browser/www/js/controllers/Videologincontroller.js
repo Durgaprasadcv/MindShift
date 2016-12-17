@@ -1,15 +1,13 @@
 angular
-.module('loginapp', ['ngMaterial', 'ngMessages'])
-.controller('Videologincontroller', function($scope,$location,$http) {
+.module('loginapp', ['ngMaterial', 'ngMessages','ngCordova'])
+.controller('Videologincontroller',Videologincontroller);
+function Videologincontroller($scope,$location,$timeout,$cordovaFileTransfer) {
 	
-	
-	
-	
-	
+		
 	
 	$scope.login=function login(){
 		
-		$http({
+		/*$http({
 			method  : 'POST',
 			url     : 'http://192.168.1.201:8000/getlogin',
 			data    : $.param({
@@ -27,15 +25,15 @@ angular
 			$scope.errormsg="Invalid UserName or Password";
 		}
 			
-		});
+		}); */
 		
-		/*if ($scope.Name == "test" && $scope.Password == "test")
+	   if ($scope.Name == "test" && $scope.Password == "test")
 		{
 			window.location = "navbar.html";	
 		}
 		else{
 			$scope.errormsg="Invalid UserName or Password";			
-		}*/
+		}
 
 	}
-});
+};

@@ -4,13 +4,12 @@
  */
 const APP_NAME = 'videoApp';
 
-(function Default($angular) {
+
 
     /**
      * @module videoApp
      * @author Adam Timberlake
      * @link https://github.com/Wildhoney/ngVideo
      */
-    $angular.module(APP_NAME, ['ngVideo','ngStorage','ngMaterial']);
+    angular.module(APP_NAME, ['ngVideo','ngStorage','ngMaterial','pouchdb']);
 
-})(window.angular);

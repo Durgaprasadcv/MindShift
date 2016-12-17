@@ -1,5 +1,5 @@
 rgb(73, 88, 166).preloader.pls-teal .plc-path {
-  stroke:#6773b3
+  stroke: #ed2553
 }
 
 .preloader.pls-gray .plc-path {
@@ -83,12 +83,12 @@ rgb(73, 88, 166).preloader.pls-teal .plc-path {
 
 [data-ma-header="teal"]:before,
 [data-ma-header="teal"] #header {
-  background-color:#6773b3
+  background-color: #ed2553
 }
 
 [data-ma-header="teal"] .smm-alerts > li.active,
 [data-ma-header="teal"] .main-menu li.active > a {
-  color:#6773b3
+  color: #ed2553
 }
 
 [data-ma-header="blue"]:before,
@@ -1159,19 +1159,19 @@ select.chosen {
 .input-slider:not([data-is-color]) .noUi-connect,
 .input-slider-range:not([data-is-color]) .noUi-connect,
 .input-slider-values:not([data-is-color]) .noUi-connect {
-  background:#6773b3 !important;
+  background: #ed2553 !important;
 }
 
 .input-slider:not([data-is-color]) .is-tooltip,
 .input-slider-range:not([data-is-color]) .is-tooltip,
 .input-slider-values:not([data-is-color]) .is-tooltip {
-  background:#6773b3
+  background: #ed2553
 }
 
 .input-slider:not([data-is-color]) .is-tooltip:after,
 .input-slider-range:not([data-is-color]) .is-tooltip:after,
 .input-slider-values:not([data-is-color]) .is-tooltip:after {
-  border-color:#6773b3 transparent transparent transparent;
+  border-color: #ed2553 transparent transparent transparent;
 }
 
 .input-slider[data-is-color=red] .noUi-handle,
@@ -1224,7 +1224,7 @@ select.chosen {
 }
 
 .input-slider:not([data-is-color]) .noUi-base {
-  background:#6773b3 !important;
+  background: #ed2553 !important;
 }
 
 .input-slider[data-is-color=red] .noUi-base {
@@ -1572,7 +1572,7 @@ select.chosen {
 }
 
 .bootstrap-datetimepicker-widget a[data-action] {
-  color:#6773b3
+  color: #ed2553
 }
 
 .timepicker-picker .btn {
@@ -1580,7 +1580,7 @@ select.chosen {
 }
 
 .timepicker-picker table tbody tr + tr:not(:last-child) {
-  background:#6773b3
+  background: #ed2553
   color: #fff;
 }
 
@@ -1618,12 +1618,12 @@ select.chosen {
 }
 
 .datepicker table thead tr:first-child th {
-  background:#6773b3
+  background: #ed2553
   padding: 20px 0;
 }
 
 .datepicker table thead tr:first-child th:hover {
-  background:#6773b3
+  background: #ed2553
 }
 
 .datepicker table thead tr:first-child th.picker-switch {
@@ -1710,7 +1710,7 @@ select.chosen {
 }
 
 .datepicker table td.active:before {
-  background-color:#6773b3
+  background-color: #ed2553
 }
 
 .datepicker-months .month,
@@ -1731,7 +1731,7 @@ select.chosen {
 .datepicker-years .year.active,
 .timepicker-minutes .minute.active,
 .timepicker-hours .hour.active {
-  background:#6773b3
+  background: #ed2553
 }
 
 .timepicker-minutes .minute,

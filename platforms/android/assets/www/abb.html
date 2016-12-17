@@ -1,0 +1,121 @@
+<html lang="en" >
+   <head>
+      <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+	  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <style>
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* 推奨サイズ */
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  text-transform: none;
+ 
+  /* WebKitブラウザサポート */
+  -webkit-font-smoothing: antialiased;
+  /* Chrome、Safariサポート */
+  text-rendering: optimizeLegibility;
+ 
+  /* Firefoxサポート */
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* IEサポート */
+  font-feature-settings: 'liga';
+}
+      </style>
+      <script language="javascript">
+  'use strict';
+  angular.module('test-app', ['ngMaterial'])
+    .controller('DemoCtrl', function() {
+      this.topDirections = ['left', 'up'];
+      this.bottomDirections = ['down', 'right'];
+      this.isOpen = false;
+      this.availableModes = ['md-fling', 'md-scale'];
+      this.selectedMode = 'md-fling';
+      this.availableDirections = ['up', 'down', 'left', 'right'];
+      this.selectedDirection = 'up';
+      this.isSelectedOne = false;
+      this.isSelectedTwo = false;
+      this.isSelectedThree = false;
+    });
+
+      </script>      
+   </head>
+   
+  <body ng-app="test-app">
+
+   <div ng-controller="DemoCtrl as demo" layout="column" ng-cloak>
+  <md-content class="md-padding" layout="column">
+    <p>
+      You may supply a direction of <code>left</code>, <code>up</code>, <code>down</code>, or
+      <code>right</code> through the <code>md-direction</code> attribute.
+    </p>
+    <div class="lock-size" layout="row" layout-align="center center">
+      <md-fab-speed-dial md-open="demo.isOpen" md-direction="{{demo.selectedDirection}}"
+                         ng-class="demo.selectedMode">
+        <md-fab-trigger>
+          <md-button aria-label="menu" class="md-fab md-warn">
+            menu
+            <!-- <md-icon md-svg-src="img/icons/menu.svg"></md-icon> -->
+          </md-button>
+        </md-fab-trigger>
+        <md-fab-actions>
+          <md-button aria-label="Twitter" class="md-fab md-raised md-mini" ng-click="demo.isSelectedOne=!demo.isSelectedOne" ng-class="{'md-primary': demo.isSelectedOne}">
+            1
+            <!-- <md-icon md-svg-src="img/icons/twitter.svg" aria-label="Twitter"></md-icon> -->
+          </md-button>
+          <md-button aria-label="Facebook" class="md-fab md-raised md-mini" ng-click="demo.isSelectedTwo=!demo.isSelectedTwo" ng-class="{'md-primary': demo.isSelectedTwo}">
+            2
+            <!-- <md-icon md-svg-src="img/icons/facebook.svg" aria-label="Facebook"></md-icon> -->
+          </md-button>
+          <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini" ng-click="demo.isSelectedThree=!demo.isSelectedThree" ng-class="{'md-primary': demo.isSelectedThree}">
+            3
+            <!-- <md-icon md-svg-src="img/icons/hangout.svg" aria-label="Google Hangout"></md-icon> -->
+          </md-button>
+        </md-fab-actions>
+      </md-fab-speed-dial>
+    </div>
+    <div layout="row" layout-align="space-around">
+      <div layout="column" layout-align="start center">
+        <b>Direction</b>
+        <md-radio-group ng-model="demo.selectedDirection">
+          <md-radio-button ng-repeat="direction in demo.availableDirections"
+                           ng-value="direction" class="text-capitalize">
+            {{direction}}
+          </md-radio-button>
+        </md-radio-group>
+      </div>
+      <div layout="column" layout-align="start center">
+        <b>Open/Closed</b>
+        <md-checkbox ng-model="demo.isOpen">
+          Open
+        </md-checkbox>
+      </div>
+      <div layout="column" layout-align="start center">
+        <b>Animation Modes</b>
+        <md-radio-group ng-model="demo.selectedMode">
+          <md-radio-button ng-repeat="mode in demo.availableModes" ng-value="mode">
+            {{mode}}
+          </md-radio-button>
+        </md-radio-group>
+      </div>
+      <div layout="column" layout-align="start center">
+        <b>select status</b>
+        <p>One: {{demo.isSelectedOne}}</p>
+        <p>Two: {{demo.isSelectedTwo}}</p>
+        <p>Three: {{demo.isSelectedThree}}</p>
+      </div>
+    </div>
+  </md-content>
+</div>
+  </body>
+
+</html>

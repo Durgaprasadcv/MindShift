@@ -216,7 +216,7 @@ section.video section.duration {
     border-radius: 3px 0 0 3px;
     position: absolute;
     font-size: 11px;
-    bottom: 50px;
+    bottom: -90px;  /*50px */
     left: 20px;
 }
 
@@ -228,7 +228,7 @@ section.video section.title {
     opacity: .8;
     padding: 2px 5px;
     border-radius: 0 3px 3px 0;
-    bottom: 75px;
+    bottom: -60px;/* 75px */
     left: 30px;
 }
 
@@ -325,12 +325,8 @@ section.video section.full-screen {
 }
 
 
-@media only screen and (orientation:landscape){
-#wrapper {width:1024px}
-}
 
-
-@media only screen and (orientation:landscape){
+/* @media only screen and (orientation:landscape){
   #container {  
      -webkit-transform: rotate(0deg);
      -moz-transform: rotate(0deg);
@@ -339,7 +335,7 @@ section.video section.full-screen {
      transform: rotate(0deg);
   }
 }
-/*section.overlay {
+section.overlay {
     background-color: rgba(1, 1, 1, 0.7);
     bottom: 0;
     left: 0;

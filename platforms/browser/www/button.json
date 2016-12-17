@@ -39,7 +39,7 @@
 				"question_title": "The new seat cowels are leaner and aggressively angled to?",
 				"question_type": "radio",
 				"marks_assigned": 1,
-				"Pause_time": 15,
+				"Pause_time": 14,
 				"num_of_box": "3",
 				"wait_time": "30",
 				"type_options": [{
@@ -160,7 +160,7 @@
 				"question_title": "Did You Like the Video?",
 				"question_type": "radio",
 				"marks_assigned": 0,
-				"Pause_time": 40,
+				"Pause_time": 39,
 				"num_of_box": "2",
 				"wait_time": "30",
 				"type_options": [{
@@ -188,14 +188,14 @@
 		"video_path": "media/insur.mp4",
 		"test_image": "assets/images/img4.jpg",
 		"no_of_questions": 0,
-		"feedback_questions":1,
+		"feedback_question":1,
 		"question": [{
 				"question_id": "08",
 
 				"question_title": "Did You Like the Video?",
 				"question_type": "radio",
 				"marks_assigned": 0,
-				"Pause_time": 9,
+				"Pause_time": 5,
 				"num_of_box": "2",
 				"wait_time": "30",
 				"type_options": [{
