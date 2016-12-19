@@ -281,6 +281,7 @@ function testController($scope, $http, $location, $localStorage, pouchDB, $timeo
 
 			$scope.starttest = function (test_id) {
 
+				console.log(test_id);
 
 				for (j = 0; j < arr_test_status.length; j++) {
 

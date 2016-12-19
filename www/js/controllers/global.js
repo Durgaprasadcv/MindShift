@@ -14,7 +14,7 @@ var url= "http://192.168.1.201:8000/gettest";
 		
 		
 		
-var video_db = window.openDatabase("Database.db", "1.0", "Cordova Demo", 200000);
+//var video_db = window.openDatabase("Database.db", "1.0", "Cordova Demo", 200000);
 		/*\\video_db.transaction(function(transaction) {
 			var executeQuery = "DROP TABLE IF EXISTS test_details";
 			transaction.executeSql(executeQuery, [],
@@ -24,7 +24,7 @@ var video_db = window.openDatabase("Database.db", "1.0", "Cordova Demo", 200000)
 		});*/
 		
 		//create
-		video_db.transaction(function(transaction) {
+	/*	video_db.transaction(function(transaction) {
 			transaction.executeSql('CREATE TABLE IF NOT EXISTS test_details (id integer PRIMARY KEY, test_id integer UNIQUE, video_path text, count integer, download_status integer)', [],
 			function(tx, result) {
 				console.log("Table  created successfully");
@@ -32,4 +32,4 @@ var video_db = window.openDatabase("Database.db", "1.0", "Cordova Demo", 200000)
 			function(error) {
 				console.log("Error occurred while creating the table.");
 			});
-		});
+		});*/
