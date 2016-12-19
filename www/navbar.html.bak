@@ -113,13 +113,16 @@
 					<i class="zmdi zmdi-long-arrow-left" data-ma-action="sidebar-close"></i>
 				</div>
 				<ul class="smm-alerts">
-					<li data-user-alert="sua-tasks" data-ma-action="sidebar-open" data-ma-target="user-alerts">
-						<i class="zmdi zmdi-view-list-alt"></i>
+					<li data-user-alert="sua-tasks" >
+						
 					</li>
 				</ul>
 				<ul class="main-menu">
 					<li class="active" data-ma-action="sidebar-close">
-						<a href="#/home"><i class="zmdi zmdi-home"></i> Home</a>
+						<a href="#/view"><i class="zmdi zmdi-home"></i> Home</a>
+					</li>
+					<li class="active" data-ma-action="sidebar-close">
+						<a href="#/home"><i class="zmdi zmdi-home"></i> Take Test</a>
 					</li>
 					<li class="active" data-ma-action="sidebar-close">
 						<a href="#/videocard"><i class="zmdi zmdi-desktop-windows"></i> Training</a>

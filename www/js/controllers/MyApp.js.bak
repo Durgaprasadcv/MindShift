@@ -5,7 +5,7 @@ angular
 	.when('/view', {
 		
 		templateUrl: 'views/sample.html'
-			.when("/home", {
+			}).when("/home", {
 			templateUrl : "taketest.html",
 			controller: 'testController as ctrl'
 			}) .when("/allreport", {

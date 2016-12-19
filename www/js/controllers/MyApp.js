@@ -22,6 +22,6 @@ angular
 			controller: 'profilecontroller'
 			}).otherwise({
 			redirectTo:"/view",
-			controller: 'testController as ctrl'
+			
 		});  
 	});	
