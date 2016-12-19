@@ -15,8 +15,9 @@ body {
   
 
 section.ng-video-container {
-    width: 100%;
-    height: 70%;
+    
+    width: 30%;
+    height: 20%;
   position:fixed;
 }
 

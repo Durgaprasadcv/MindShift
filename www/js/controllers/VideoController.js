@@ -69,7 +69,7 @@
 		var localDB = new PouchDB('app1');
 		$scope.selected_test_id = localStorage.getItem('test_id');
 
-		localDB.get('001', function (err, res) {
+	/*	localDB.get('001', function (err, res) {
 
 			$.each(res['data'], function (p, field) {
 				var jsondata = (JSON.stringify(field));
@@ -83,7 +83,32 @@
 					no_of_questions = (taketest['no_of_questions']);
 					feedback_questions = (taketest['feedback_questions']);
 				};
+			});*/
+			$http({
+			method: 'POST',
+			url: 'http://192.168.1.201:8000/gettest',
+
+
+			headers: {
+				'Content-Type': 'application/x-www-form-urlencoded'
+			}
+		}).success(function (res) {
+
+			$.each(res, function (p, field) {
+				var jsondata = (JSON.stringify(field));
+				console.log(jsondata);
+				$scope.testss1 = JSON.parse(jsondata);
+				$scope.test_id = (field['test_id']);
+					taketest = (field);
+					$scope.test_name = (taketest['test_name']);
+					$scope.test_description = (taketest['test_description']);
+					$scope.video_path = (taketest['video_path']);
+					no_of_questions = (taketest['no_of_questions']);
+					feedback_questions = (taketest['feedback_questions']);
+				//};
+
 			});
+	
 			total_questions = no_of_questions + feedback_questions;
 
 			/**
@@ -142,7 +167,7 @@
 			};
 
 			$scope.playvideo1 = function playvideo1() {
-				if ((window.matchMedia("(orientation: landscape)").matches)) {
+				//if ((window.matchMedia("(orientation: landscape)").matches)) {
 
 					var iteration = 0;
 					var currtime;
@@ -174,9 +199,9 @@
 					video.load();
 					video.play();
 
-				} else {
-					alert("portrait mode");
-				}
+			//	} else {
+			//		alert("portrait mode");
+			//	}
 			}
 
 			$scope.wait = function wait(z, iteration) {

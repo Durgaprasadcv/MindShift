@@ -120,7 +120,7 @@ function testController($scope, $http, $location, $localStorage, pouchDB, $timeo
 
 			});
 
-			video_db.transaction(function (transaction) {
+		/*	video_db.transaction(function (transaction) {
 
 				for (j = 0; j < arr_id.length; j++) {
 					var test_id = arr_id[j];
@@ -275,7 +275,7 @@ function testController($scope, $http, $location, $localStorage, pouchDB, $timeo
 					}
 
 				}
-			}
+			}*/
 
 
 
@@ -283,7 +283,12 @@ function testController($scope, $http, $location, $localStorage, pouchDB, $timeo
 
 				console.log(test_id);
 
-				for (j = 0; j < arr_test_status.length; j++) {
+				localStorage.setItem("test_id", test_id);
+						$scope.test_id = localStorage.setItem("test_id", test_id);
+						window.location.href = "videocard.html";
+
+
+		/*		for (j = 0; j < arr_test_status.length; j++) {
 
 					if (arr_test_id[j] == test_id && arr_test_status[j] == 0) {
 						window.location.href = "navbar.html";
@@ -305,7 +310,7 @@ function testController($scope, $http, $location, $localStorage, pouchDB, $timeo
 						window.location.href = "navbar.html#/allreport";
 
 					}
-				}
+				}*/
 
 			}
 
